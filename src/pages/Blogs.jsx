@@ -12,6 +12,10 @@ const Blogs = () => {
   };
 
   const addBlog = async () => {
+    if(!title.trim() || !content.trim()){
+      alert("Title and content are required");
+      return;
+    }
     await API.post("/blogs", { title, content });
     fetchBlogs();
   };
