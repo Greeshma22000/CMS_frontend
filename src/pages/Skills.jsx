@@ -5,13 +5,16 @@ const Skills = () => {
   const [skills, setSkills] = useState([]);
   const [name, setName] = useState("");
   const [level, setLevel] = useState("");
-
   const fetchSkills = async () => {
     const res = await API.get("/skills");
     setSkills(res.data);
   };
 
   const addSkill = async () => {
+    if(!name.trim() || !level.trim()){
+      alert("Skill name and level are required");
+      return;
+    }
     await API.post("/skills", { name, level });
     setName("");
     setLevel("");

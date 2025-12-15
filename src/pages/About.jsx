@@ -12,6 +12,10 @@ const About = () => {
     };
 
     const addAbout = async () => {
+        if(!title.trim() || !description.trim()){
+            alert("Title and Description are required");
+            return;
+        }
         await API.post("/about", {title, description});
         setTitle("");
         setDescription("");
@@ -27,8 +31,8 @@ const About = () => {
     }, [])
   return (
     <div>
-        <h2>About Section</h2>
-        <input type="text" onChange={e => setTitle(e.target.value)}/>
+        <h2>About</h2>
+        <input type="text" onChange={e => setTitle(e.target.value)} placeholder='Title...'/>
         <textarea placeholder='Description' value={description} onChange={e => setDescription(e.target.value)} />
         <button onClick={addAbout}>Add</button>
 
