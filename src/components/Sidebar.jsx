@@ -20,7 +20,7 @@ const Sidebar = () => {
           <Link 
             key={link.path} 
             to={link.path}
-            className="shadow-xl rounded-2xl p-2 shadow-blue-200 hover:shadow-xl hover:p-2 hover:rounded-2xl hover:scale-3d hover:transition-all hover:duration-300 hover:bg-blue-300 hover:text-white"
+            className="border-b-2 rounded-2xl p-2 shadow-blue-200 hover:shadow-xl hover:p-2 hover:rounded-2xl hover:scale-3d hover:transition-all hover:duration-300 hover:bg-blue-300 hover:text-white"
           >
             {link.title}
           </Link>

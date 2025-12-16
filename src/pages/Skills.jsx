@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import API from "../api/api";
+import Sidebar from "../components/Sidebar";
 
 const Skills = () => {
   const [skills, setSkills] = useState([]);
@@ -31,7 +32,8 @@ const Skills = () => {
   }, []);
 
   return (
-    <div>
+    <div className="flex min-h-screen bg-blue-300">
+      <Sidebar />
       <h2>Skills</h2>
 
       <input placeholder="Skill Name" value={name} onChange={e => setName(e.target.value)} />
