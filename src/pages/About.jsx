@@ -33,7 +33,7 @@ const About = () => {
   return (
     <div className='min-h-screen bg-blue-300'>
         <Sidebar />
-        <div className='absolute left-70 mx-auto bg-white rounded-xl shadow-md p-6 w-250 text-gray-800 mt-5'>
+        <div className='absolute left-70 mx-auto bg-white rounded-xl shadow-md p-6 text-gray-800 mt-5'>
             <h2 className='text-3xl font-bold text-center mb-6 text-blue-800'>About</h2>
             <div className='space-y-4 mb-8'>
                 <input 
