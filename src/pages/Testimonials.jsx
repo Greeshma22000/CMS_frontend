@@ -37,20 +37,29 @@ const Testimonials = () => {
               text="text" 
               placeholder="Name" 
               onChange={e => setName(e.target.value)} 
+              className="w-full border border-blue-300 rounded-md px-4 py-2 focus:outline-none focus::ring-2 focus:ring-indigo-500"
             />
           </div>
           <div>
-            <textarea placeholder="Message" onChange={e => setMessage(e.target.value)} />
+            <textarea 
+              placeholder="Message" 
+              onChange={e => setMessage(e.target.value)} 
+              rows={4}
+              className="w-full border border-blue-300 rounded-md px-4 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
           </div>
 
-          <button onClick={addItem}>Add</button>
+          <button onClick={addItem} className="bg-blue-600 text-white px-5 py-2 rounded-md hover:bg-indigo-700 transition">Add</button>
         </div>
 
-        <div>
+        <div className="space-y-4 max-w-lg">
           {list.map(t => (
-            <div key={t._id}>
-              {t.name}
-            <button onClick={() => deleteItem(t._id)}>Delete</button>
+            <div key={t._id} className="bg-white p-4 rounded-lg shadow flex items-center justify-between">
+              <div>
+                <p className="font-medium text-blue-800">{t.name}</p>
+                <p className="text-sm text-blue-600">{t.message}</p>
+              </div>
+            <button onClick={() => deleteItem(t._id)} className="text-red-600 hover:text-red-700 font-medium">Delete</button>
             </div>
           ))}
         </div>
