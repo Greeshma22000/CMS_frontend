@@ -27,20 +27,34 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div>
+    <div className="flex min-h-screen bg-blue-300">
       <Sidebar />
-      <h2>Testimonials</h2>
+      <div className="flex-1 p-6 absolute left-70">
+        <h2 className="text-2xl font-semibold mb-6 text-blue-800 text-center bg-white p-2 rounded-2xl">Testimonials</h2>
+        <div className="bg-white p-6 rounded-lg shadow mb-8 max-w-lg">
+          <div className="mb-4">
+            <input 
+              text="text" 
+              placeholder="Name" 
+              onChange={e => setName(e.target.value)} 
+            />
+          </div>
+          <div>
+            <textarea placeholder="Message" onChange={e => setMessage(e.target.value)} />
+          </div>
 
-      <input placeholder="Name" onChange={e => setName(e.target.value)} />
-      <textarea placeholder="Message" onChange={e => setMessage(e.target.value)} />
-      <button onClick={addItem}>Add</button>
-
-      {list.map(t => (
-        <div key={t._id}>
-          {t.name}
-          <button onClick={() => deleteItem(t._id)}>Delete</button>
+          <button onClick={addItem}>Add</button>
         </div>
-      ))}
+
+        <div>
+          {list.map(t => (
+            <div key={t._id}>
+              {t.name}
+            <button onClick={() => deleteItem(t._id)}>Delete</button>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
