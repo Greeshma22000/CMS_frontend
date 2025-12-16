@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import API from "../api/api";
+import Sidebar from "../components/Sidebar";
 
 const Testimonials = () => {
   const [list, setList] = useState([]);
@@ -27,6 +28,7 @@ const Testimonials = () => {
 
   return (
     <div>
+      <Sidebar />
       <h2>Testimonials</h2>
 
       <input placeholder="Name" onChange={e => setName(e.target.value)} />
