@@ -14,13 +14,13 @@ const Sidebar = () => {
   ];
   return (
     <div className="w-64 h-full fixed bg-white shadow-2xl rounded-2xl">
-      <nav className="flex flex-col p-8 space-y-8 text-xl font-semibold italic">
-        <Link to="/" className="shadow-xl p-2 rounded-2xl border-l-8 border-blue-600 shadow-blue-400/60 border">Dashboard</Link>
+      <nav className="flex flex-col p-8 space-y-5 text-xl font-semibold italic">
+        <Link to="/" className="text-gray-700 shadow-xl p-2 rounded-2xl border-l-8 border-blue-600 shadow-blue-400/60 border">Dashboard</Link>
         {SidebarLinks.map((link) => (
           <Link 
             key={link.path} 
             to={link.path}
-            className="border-b-2 rounded-2xl p-2 shadow-blue-200 hover:shadow-xl hover:p-2 hover:rounded-2xl hover:scale-3d hover:transition-all hover:duration-300 hover:bg-blue-300 hover:text-white"
+            className="text-gray-700 hover:border-b-3 rounded-2xl p-2 shadow-blue-200 hover:shadow-xl hover:p-2 hover:rounded-2xl hover:scale-3d hover:transition-all hover:duration-300 hover:bg-blue-300 hover:text-white"
           >
             {link.title}
           </Link>
